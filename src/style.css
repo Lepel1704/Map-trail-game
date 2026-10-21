@@ -1,0 +1,13 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=Inter:wght@400;600;700&display=swap');
+:root { color-scheme: light; font-family: Inter, sans-serif; }
+* { box-sizing: border-box; }
+html, body, #app { margin:0; width:100%; height:100%; overflow:hidden; background:#b9d5a2; }
+canvas { display:block; width:100%; height:100%; }
+#hud { position:fixed; z-index:2; top:20px; left:22px; color:#fff; text-shadow:0 2px 8px #16251c88; pointer-events:none; }
+.wordmark { font:800 24px 'Barlow Condensed',sans-serif; letter-spacing:1.4px; }
+.wordmark span { color:#f4d36f; }
+#clock { font:800 42px 'Barlow Condensed',sans-serif; font-variant-numeric:tabular-nums; line-height:1.1; margin:5px 0; }
+.hint { font-size:12px; opacity:.92; }
+#state { display:inline-block; margin-top:11px; padding:8px 11px; border-radius:8px; background:#203b2cdd; font-size:12px; font-weight:700; max-width:min(90vw,560px); }
+#footer { position:fixed; bottom:12px; right:15px; color:#243d2f; font-size:10px; font-weight:700; letter-spacing:.5px; opacity:.75; pointer-events:none; }
+@media(max-width:600px) { #hud {top:12px;left:12px} .wordmark{font-size:20px} #clock{font-size:34px} .hint{font-size:11px} }
