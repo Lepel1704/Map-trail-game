@@ -16,16 +16,14 @@ concurrency:
 
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
         with:
           node-version: 20
-      # Attempt to enable Pages automatically if it is not configured yet.
+      # GitHub Pages must first be enabled in repository Settings → Pages.
       - uses: actions/configure-pages@v5
-        with:
-          enablement: true
       - run: npm install
       - run: npm run build
       - uses: actions/upload-pages-artifact@v3
@@ -36,7 +34,7 @@ jobs:
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     needs: build
     steps:
       - name: Deploy to GitHub Pages
